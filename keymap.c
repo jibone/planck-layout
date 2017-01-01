@@ -24,6 +24,8 @@ extern keymap_config_t keymap_config;
 #define SFT_ENT   FUNC(0) // Tap for Enter, hold for Shift
 #define LWR_PGDN  FUNC(1) // Tap for PgDn, hold for LOWER
 #define RSE_PGUP  FUNC(2) // Tap for PgDn, hold for LOWER
+#define SFT_BSPC  FUNC(3)
+#define SFT_TAB   FUNC(4)
 
 // Fillers to make layering more clear
 #define _______ KC_TRNS
@@ -33,7 +35,9 @@ extern keymap_config_t keymap_config;
 const uint16_t PROGMEM fn_actions[] = {
   [0] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_ENT),
   [1] = ACTION_LAYER_TAP_KEY(_LOWER, KC_PGDN),
-  [2] = ACTION_LAYER_TAP_KEY(_RAISE, KC_PGUP)
+  [2] = ACTION_LAYER_TAP_KEY(_RAISE, KC_PGUP),
+  [3] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_BSPC),
+  [4] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_TAB)
 };
 
 // Keyboard layout
@@ -51,10 +55,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
   [_QWERTY] = {
-    { LT(KC_LSFT, KC_TAB),  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,               KC_Y,               KC_U,    KC_I,    KC_O,    KC_P,    LT(KC_RSFT, KC_BSPC) },
-    { KC_LCTL,              KC_A,    KC_S,    KC_D,    KC_F,    KC_G,               KC_H,               KC_J,    KC_K,    KC_L,    KC_SCLN, SFT_ENT              },
-    { KC_LSFT,              KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,               KC_N,               KC_M,    KC_COMM, KC_DOT,  KC_SLSH, SFT_ENT              },
-    { KC_LCTL,              KC_ESC,  KC_LALT, KC_LGUI, LOWER,   LT(SPACE, KC_SPC),  LT(SPACE, KC_SPC),  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT              }
+    { SFT_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,               KC_Y,               KC_U,    KC_I,    KC_O,    KC_P,    SFT_BSPC },
+    { KC_LCTL,  KC_A,    KC_S,    KC_D,    KC_F,    KC_G,               KC_H,               KC_J,    KC_K,    KC_L,    KC_SCLN, SFT_ENT  },
+    { KC_LSFT,  KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,               KC_N,               KC_M,    KC_COMM, KC_DOT,  KC_SLSH, SFT_ENT  },
+    { KC_LCTL,  KC_ESC,  KC_LALT, KC_LGUI, LOWER,   LT(SPACE, KC_SPC),  LT(SPACE, KC_SPC),  RAISE,   KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT  }
   },
 
 /* Lower
