@@ -33,11 +33,11 @@ extern keymap_config_t keymap_config;
 
 // Enable these functions using FUNC(n) macro.
 const uint16_t PROGMEM fn_actions[] = {
-  [0] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_ENT),
-  [1] = ACTION_LAYER_TAP_KEY(_LOWER, KC_PGDN),
-  [2] = ACTION_LAYER_TAP_KEY(_RAISE, KC_PGUP),
-  [3] = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_BSPC),
-  [4] = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_TAB)
+  [0]  = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_ENT),
+  [1]  = ACTION_LAYER_TAP_KEY(_LOWER, KC_PGDN),
+  [2]  = ACTION_LAYER_TAP_KEY(_RAISE, KC_PGUP),
+  [3]  = ACTION_MODS_TAP_KEY(MOD_RSFT, KC_BSPC),
+  [4]  = ACTION_MODS_TAP_KEY(MOD_LSFT, KC_TAB)
 };
 
 // Keyboard layout
@@ -73,10 +73,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * `-----------------------------------------------------------------------------------'
  */
   [_LOWER] = {
-    { KC_TILD, KC_EXLM,    KC_AT,      KC_HASH,    KC_DLR,     KC_PERC,    KC_CIRC,    KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_BSPC },
-    { KC_DEL,  LGUI(KC_A), LGUI(KC_S), LGUI(KC_D), _______,    _______,    _______,    KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE },
-    { _______, LGUI(KC_Z), LGUI(KC_X), LGUI(KC_C), LGUI(KC_V), LGUI(KC_B), LGUI(KC_N), _______, _______, _______, KC_DQUO, _______ },
-    { _______, _______,    _______,    _______,    _______,    _______,    _______,    _______, _______, _______, _______, _______ }
+    { KC_TILD, KC_EXLM, KC_AT,    KC_HASH, KC_DLR,  KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_BSPC },
+    { KC_DEL,  _______, _______,  _______, _______, _______, _______, KC_UNDS, KC_PLUS, KC_LCBR, KC_RCBR, KC_PIPE },
+    { _______, _______, _______,  _______, _______, _______, _______, _______, _______, _______, KC_DQUO, _______ },
+    { _______, _______, _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______ }
   },
 
 /* Raise
